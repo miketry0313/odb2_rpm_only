@@ -1,0 +1,6 @@
+{
+  "method": "statistical",
+  "n_features": 324,
+  "window_size": 60,
+  "n_original_features": 27
+}

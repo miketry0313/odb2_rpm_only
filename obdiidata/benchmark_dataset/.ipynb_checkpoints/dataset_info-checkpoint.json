@@ -1,0 +1,127 @@
+{
+  "total_samples": 30424,
+  "train_samples": 18254,
+  "validation_samples": 6085,
+  "test_samples": 6085,
+  "train_ratio": 0.6,
+  "val_ratio": 0.2,
+  "test_ratio": 0.2,
+  "random_seed": 42,
+  "feature_columns": [
+    "ENGINE_RUN_TINE ()",
+    "ENGINE_RPM ()",
+    "VEHICLE_SPEED ()",
+    "THROTTLE ()",
+    "ENGINE_LOAD ()",
+    "COOLANT_TEMPERATURE ()",
+    "LONG_TERM_FUEL_TRIM_BANK_1 ()",
+    "SHORT_TERM_FUEL_TRIM_BANK_1 ()",
+    "INTAKE_MANIFOLD_PRESSURE ()",
+    "ABSOLUTE_THROTTLE_B ()",
+    "COMMANDED_THROTTLE_ACTUATOR ()",
+    "FUEL_AIR_COMMANDED_EQUIV_RATIO ()",
+    "ABSOLUTE_BAROMETRIC_PRESSURE ()",
+    "RELATIVE_THROTTLE_POSITION ()",
+    "TIMING_ADVANCE ()",
+    "CATALYST_TEMPERATURE_BANK1_SENSOR1 ()",
+    "CATALYST_TEMPERATURE_BANK1_SENSOR2 ()",
+    "CONTROL_MODULE_VOLTAGE ()",
+    "COMMANDED_EVAPORATIVE_PURGE ()",
+    "TIME_RUN_WITH_MIL_ON ()",
+    "TIME_SINCE_TROUBLE_CODES_CLEARED ()",
+    "DISTANCE_TRAVELED_WITH_MIL_ON ()",
+    "WARM_UPS_SINCE_CODES_CLEARED ()"
+  ],
+  "val_fault_config": [
+    [
+      "rpm_spike",
+      1000,
+      1030
+    ],
+    [
+      "coolant_drift",
+      2000,
+      2120
+    ],
+    [
+      "battery_drop",
+      3000,
+      3090
+    ],
+    [
+      "sensor_freeze",
+      4000,
+      4040
+    ]
+  ],
+  "test_fault_config": [
+    [
+      "rpm_spike",
+      500,
+      530
+    ],
+    [
+      "coolant_drift",
+      1500,
+      1620
+    ],
+    [
+      "battery_drop",
+      2500,
+      2590
+    ],
+    [
+      "sensor_freeze",
+      3500,
+      3540
+    ]
+  ],
+  "real_anomaly_thresholds": {
+    "ENGINE_RPM": 3.5,
+    "COOLANT_TEMPERATURE": 3.0,
+    "CONTROL_MODULE_VOLTAGE": 3.0
+  },
+  "statistics": {
+    "train": {
+      "total": 18254,
+      "normal": 13553,
+      "anomaly": 4701,
+      "anomaly_types": {
+        "real_battery_drop": 2171,
+        "real_coolant_drift": 2068,
+        "real_rpm_spike": 462
+      }
+    },
+    "validation": {
+      "total": 6085,
+      "normal": 4340,
+      "anomaly": 1745,
+      "anomaly_types": {
+        "real_battery_drop": 704,
+        "real_coolant_drift": 665,
+        "real_rpm_spike": 152,
+        "coolant_drift": 97,
+        "battery_drop": 76,
+        "sensor_freeze": 28,
+        "rpm_spike": 22,
+        "normal": 1
+      }
+    },
+    "test": {
+      "total": 6085,
+      "normal": 4351,
+      "anomaly": 1734,
+      "anomaly_types": {
+        "real_battery_drop": 696,
+        "real_coolant_drift": 688,
+        "real_rpm_spike": 142,
+        "coolant_drift": 91,
+        "battery_drop": 62,
+        "sensor_freeze": 33,
+        "rpm_spike": 20,
+        "normal": 1,
+        "real_sensor_freeze": 1
+      }
+    }
+  }
+}
